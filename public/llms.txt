@@ -1,0 +1,17 @@
+# Suvra Mukherjee
+
+> Business Analyst at Quantiphi Analytics, Bangalore. Turns business questions into clear technical requirements and data driven analysis, across enterprise AI and analytics delivery.
+
+## Key sections
+
+- [About](/#about): Background, current focus, and what Suvra is looking for next.
+- [Experience](/#experience): Work history at Quantiphi Analytics and Highradius Corporation.
+- [Research](/#research): Published paper — Cardiologist Recommendation Framework using Predictive Analytics, presented at ICCCNet 2024.
+- [Education](/#education): Academic background, including B.Tech in Computer Science and Engineering from KIIT Deemed to be University.
+- [Certifications](/#certifications): Cloud and AI credentials from Google Cloud, Oracle, and IBM.
+- [Skills](/#skills): Data analysis, BI, cloud/AI, business analysis, and delivery management capabilities.
+- [Contact](/#contact): Email contact for Technical Business Analyst and Data Analyst opportunities.
+
+## Notes
+
+Full page text is available at [/llms-full.txt](/llms-full.txt) for ingestion.

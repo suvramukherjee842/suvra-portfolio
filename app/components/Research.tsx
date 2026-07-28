@@ -1,6 +1,28 @@
+const scholarlyArticleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  name: "Cardiologist Recommendation Framework using Predictive Analytics",
+  author: { "@type": "Person", name: "Suvra Mukherjee" },
+  datePublished: "2024",
+  isPartOf: {
+    "@type": "Event",
+    name: "ICCCNet 2024",
+    location: {
+      "@type": "Place",
+      name: "Manchester Metropolitan University, United Kingdom",
+    },
+  },
+  // publisher / DOI / url omitted — unconfirmed, see SEO-AUDIT.md blocking questions
+  about: "Predictive analytics for cardiology recommendations using a Naive Bayes classifier and CoreNLP sentiment analysis",
+};
+
 export default function Research() {
   return (
     <section id="research" style={{ borderTop: "1px solid rgba(255,255,255,0.08)", background: "#101312" }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(scholarlyArticleJsonLd) }}
+      />
       <div style={{ maxWidth: 1180, margin: "0 auto", padding: "96px 28px", scrollMarginTop: 88 }}>
         <p style={{ fontFamily: "var(--font-jetbrains-mono), monospace", fontSize: 12, letterSpacing: "0.18em", textTransform: "uppercase", color: "#C3E75B", margin: "0 0 14px" }}>Research</p>
         <h2 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 600, letterSpacing: "-0.01em", margin: "0 0 40px" }}>Published work</h2>

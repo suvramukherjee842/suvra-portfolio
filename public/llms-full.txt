@@ -1,0 +1,75 @@
+# Suvra Mukherjee
+
+Technical Business Analyst
+
+I turn business questions into data driven analysis and clear technical requirements that move decisions forward.
+
+## About
+
+### From research questions to data driven delivery
+
+I am an analyst who works where data, product, and delivery meet. My focus is translating what a business actually needs into requirements a team can build against, and defining the metrics that tell us whether it worked.
+
+I began in research, working on predictive analytics and published methods, then moved into analytics and enterprise AI delivery. Today I work across enterprise AI and analytics, turning business needs into technical requirements, analyzing data to answer real questions, and defining the success metrics that show whether it worked.
+
+Before engineering I trained for five years in fine arts and earned a diploma with distinction. That background shaped how I structure information and communicate it, clearly and with intent.
+
+What's next: Pursuing postgraduate study and targeting Technical Business Analyst and Data Analyst roles, focused on analysis, technical requirements, and data driven products.
+
+- Focus: Data analysis and technical requirements
+- Currently: Business Analyst at Quantiphi Analytics
+- Open to: Technical Business Analyst and Data Analyst roles
+
+## Experience
+
+### Quantiphi Analytics — Business Analyst (Jan 2025 to Present)
+
+- Wrote the data and functional requirements for the Vector Store component of a $3M enterprise data platform, and coordinated with the engineering teams building around it.
+- Defined how an AI coaching agent for more than 80,000 employees should work on Microsoft Copilot Studio, including intent routing and how it connects to company knowledge sources.
+- Turned business requests into clear user stories and acceptance criteria that engineers could build and test against.
+- Ran requirement gathering sessions with business and technical teams to agree on what to build and in what order.
+- Analyzed usage and performance data to answer questions from the product and delivery teams.
+- Ran sprint planning, daily standups, and backlog grooming to keep the work organized and on track.
+- Wrote 4 analysis documents, more than 15 proposals, more than 25 slide decks, and more than 6 SOWs for client and internal leadership.
+
+### Highradius Corporation — Marketing Intern (Jun 2024 to Dec 2024)
+
+- Analyzed Salesforce CRM data with SQL to find where campaign conversion was dropping, which led to a 12% improvement in conversion rate.
+- Built and ran reports on campaign and funnel performance so the marketing team could see what was working and what was not.
+- Planned and wrote content across more than 30 SEO articles, which brought in more than 4,000 organic visitors.
+- Tracked how each article and channel performed and used that to decide what content to produce next.
+
+## Research
+
+### Cardiologist Recommendation Framework using Predictive Analytics
+
+A Naive Bayes classifier reaching 90.7% accuracy, combined with CoreNLP sentiment analysis, benchmarked against Logistic Regression, Decision Tree, SVM, and KNN.
+
+Presented at ICCCNet 2024, Manchester Metropolitan University, United Kingdom. In collaboration with Xi'an Jiaotong Liverpool University and University of South Wales.
+
+## Education
+
+- 2021 to 2025 — KIIT Deemed to be University: B.Tech, Computer Science and Engineering (CGPA 8.04 / 10)
+- Five year diploma — Bangiya Sangeet Kala Kendra, Kolkata: Fine Arts Diploma (First Division with Distinction)
+- 2019 to 2021 — Zoom International School, Durgapur: Class 12 (92.7%)
+- 2019 — Carmel School, Steel Township, Durgapur: Class 10, ICSE (84.83%)
+
+## Certifications
+
+- Google Cloud — Associate Cloud Engineer (Mar 2025 to Mar 2028)
+- Google Cloud — Generative AI Leader (2025)
+- Oracle — OCI Generative AI Professional (2025)
+- Oracle — OCI AI Foundations Associate (2025)
+- IBM — Data Science Professional Certificate (2024)
+
+## Skills
+
+- Data Analysis and Querying: SQL, Advanced SQL, Python, Advanced Excel, Google Sheets
+- Data Visualization and BI: Tableau, Power BI, Dashboard Design, Interactive Dashboards, KPI Dashboards, Data Storytelling
+- Cloud and AI: Google Cloud Platform, Oracle Cloud Infrastructure, Generative AI and LLMs, Prompt Engineering, AI Workflow Automation, Microsoft Copilot Studio
+- Business Analysis: KPI Framework Development, Gap Analysis, Success Metrics Definition, Opportunity Identification, First Principles Problem Solving
+- Project and Delivery Management: Jira, Agile Methodologies, Scrum Ceremonies, Sprint Planning, Backlog Grooming, UAT Support, User Training and Enablement, Stakeholder Management, Cross Functional Collaboration, Multi Project Management
+
+## Contact
+
+Open to Technical Business Analyst and Data Analyst roles. Email: suvramukherjee166@gmail.com

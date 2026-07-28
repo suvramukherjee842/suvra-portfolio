@@ -1,6 +1,21 @@
+const profilePageJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  mainEntity: {
+    "@type": "Person",
+    name: "Suvra Mukherjee",
+    jobTitle: "Business Analyst",
+    worksFor: { "@type": "Organization", name: "Quantiphi Analytics" },
+  },
+};
+
 export default function About() {
   return (
     <section id="about" style={{ borderTop: "1px solid rgba(255,255,255,0.08)", background: "#101312" }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageJsonLd) }}
+      />
       <div style={{
         maxWidth: 1180, margin: "0 auto", padding: "96px 28px", scrollMarginTop: 88,
         display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 56,
