@@ -18,7 +18,7 @@ export default function JsonLd() {
     jobTitle: "Business Analyst",
     description: SITE_DESCRIPTION,
     url: SITE_URL,
-    image: `${SITE_URL}/portrait.jpg`,
+    image: `${SITE_URL}/portrait.png`,
     worksFor: {
       "@type": "Organization",
       name: "Quantiphi Analytics",

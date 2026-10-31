@@ -2,48 +2,72 @@
 import { useEffect, useRef, useState } from "react";
 
 const DEFS = [
-  { target: 2, prefix: "", suffix: "+", label: "years delivering analysis and requirements, in enterprise AI and in marketing." },
-  { target: 3, prefix: "$", suffix: "M", label: "enterprise data platform whose Vector Store requirements I wrote." },
-  { target: 80, prefix: "", suffix: "k", label: "employees served by the AI coaching agent I defined on Copilot Studio." },
-  { target: 12, prefix: "", suffix: "%", label: "lift in campaign conversion after finding the drop in Salesforce CRM data." },
-  { target: 5, prefix: "", suffix: "", label: "professional certifications across Google Cloud, Oracle and IBM." },
+  { target: 2, suffix: "+", label: "Years of professional experience" },
+  { target: 5, suffix: "", label: "Professional certifications completed" },
+  { target: 2, suffix: "", label: "Companies worked with" },
 ];
 
 export default function Stats() {
-  const [counts, setCounts] = useState(DEFS.map((d) => d.target));
+  const [counts, setCounts] = useState([0, 0, 0]);
+  const [started, setStarted] = useState(false);
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const el = ref.current;
-    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    setCounts(DEFS.map(() => 0));
-    const obs = new IntersectionObserver(([entry]) => {
-      if (!entry.isIntersecting) return;
-      obs.disconnect();
-      const start = performance.now();
-      const tick = (now: number) => {
-        const t = Math.min(1, (now - start) / 1400);
-        const e = 1 - Math.pow(1 - t, 3);
-        setCounts(DEFS.map((d) => d.target * e));
-        if (t < 1) requestAnimationFrame(tick);
-      };
-      requestAnimationFrame(tick);
+    if (!el) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const obs = new IntersectionObserver(([entry], o) => {
+      if (entry.isIntersecting && !started) {
+        setStarted(true);
+        if (reduce) {
+          setCounts(DEFS.map((d) => d.target));
+        } else {
+          const dur = 1700, start = performance.now();
+          const tick = (now: number) => {
+            const t = Math.min(1, (now - start) / dur);
+            const e = 1 - Math.pow(1 - t, 3);
+            setCounts(DEFS.map((d) => d.target * e));
+            if (t < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        }
+        o.disconnect();
+      }
     }, { threshold: 0.35 });
     obs.observe(el);
     return () => obs.disconnect();
-  }, []);
+  }, [started]);
 
   return (
-    <section id="stats" ref={ref}>
-      <h2 className="h2" data-reveal>In numbers</h2>
-      <dl className="figures">
+    <section
+      id="stats"
+      ref={ref}
+      aria-label="Key results"
+      style={{
+        borderTop: "1px solid rgba(255,255,255,0.08)",
+        borderBottom: "1px solid rgba(255,255,255,0.08)",
+        background: "#101312",
+      }}
+    >
+      <div style={{
+        maxWidth: 1180, margin: "0 auto", padding: "44px 28px",
+        display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 28,
+      }}>
         {DEFS.map((d, i) => (
-          <div key={d.label} data-reveal style={{ ["--i" as string]: i + 1 }}>
-            <dt>{d.prefix}{Math.round(counts[i])}{d.suffix}</dt>
-            <dd>{d.label}</dd>
+          <div key={i} style={{ padding: "4px 0" }}>
+            <div style={{
+              fontFamily: "var(--font-jetbrains-mono), monospace",
+              fontSize: "clamp(30px, 4vw, 42px)", fontWeight: 500,
+              color: "#C3E75B", letterSpacing: "-0.02em", lineHeight: 1,
+            }}>
+              {Math.round(counts[i])}{d.suffix}
+            </div>
+            <div style={{ marginTop: 12, fontSize: 13.5, lineHeight: 1.45, color: "#9BA39A", maxWidth: "22ch" }}>
+              {d.label}
+            </div>
           </div>
         ))}
-      </dl>
+      </div>
     </section>
   );
 }

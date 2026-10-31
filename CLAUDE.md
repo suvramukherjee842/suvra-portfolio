@@ -25,47 +25,50 @@ Act as a senior frontend engineer. Build pixel-faithful, fully responsive implem
 | border-accent | `rgba(195,231,91,0.22)` | Accent-tinted borders |
 
 ### Typography
-- **Display/Headings**: Space Grotesk 400–600, tracking -0.02em (name: -0.045em, lowercase)
-- **Body**: Times New Roman, Times, serif, 18px / 1.55
-- No monospace, no uppercase letter-spaced labels, no eyebrow kickers above headings
-- Six size tokens in `app/globals.css` (`--fs-display` … `--fs-small`); nothing under 15px
+- **Display/Headings**: Space Grotesk, weight 600–700, tracking -0.01em to -0.02em
+- **Body**: Times New Roman, Times, serif (global default)
+- **Labels/Mono**: JetBrains Mono — section kickers (12px, 0.18em letter-spacing, uppercase), stats, tags
+- **Global override**: All fonts default to Times New Roman unless explicitly overridden with Space Grotesk or JetBrains Mono
 
-### Layout: "split stage" (tasteskill direction, seed 310023236)
-- 47/53 split: left half is a sticky full-height photo (`Stage`), right half scrolls
-- Split 1: portrait beside Hero, Stats, About, Experience
-- Research breaks full width (square plate + tabs: Method / Result / Venue)
-- Split 2: Education beside Kolkata → Durgapur photos (swap via `data-stage`)
-- Credentials band: Certifications (giant word + `<details>` bars) beside the Skills paper sheet
-- Contact: full-width display rows; Footer: photo half + large menu, picture credits
-- Phone (<860px): splits stack, stage becomes a static picture
-- Margins `--margin`, section gap `--gap-section`; square corners, square buttons
+### Spacing
+- Section padding: `96px 28px` desktop → `64px 20px` mobile
+- Max content width: `1180px` centered
+- Nav: fixed pill, `min(1180px, calc(100% - 28px))` wide, `top: 16px`
 
-### House rules (taste-skill)
-No gradients, hairline rules, 1px outlined boxes, shadows at rest, glass/blur, pill nav,
-icon cards, index numbering. Separate surfaces by tone steps (`--tone-1/2/3`).
-Check with `node .claude/skills/design-taste-frontend/scripts/inspect.mjs <url>` on a production build.
-
-### Motion
-- Hero name shrinks on scroll (`animation-timeline: view()`, static fallback)
-- `[data-reveal]` staggered entrances via `Reveal` (only hidden once `.js` is set)
-- Stage photos drift slowly; stat counters count up
+### Animations
+- `gridSweep`: lime grid sweeps 6s linear infinite (hero + contact bg)
+- `fadeIn`: opacity 0→1
 - Respect `prefers-reduced-motion`
 
+### Grid background pattern
+Two overlapping grids at 46×46px:
+1. White lines at 4.5% opacity
+2. Lime lines at 42%/38% opacity, masked to a spotlight
+
 ## Sections (in order)
-1. Nav: plain fixed bar over the right half, active link in accent, Contact action
-2. Hero: lowercase name, one sentence, Email me
-3. Stats: figure lines
-4. About: letter with sign-off
-5. Experience: ledger rows that open (`<details>`)
-6. Research
-7. Education
-8. Certifications
-9. Skills (hover tag → `background:#C3E75B; color:#0d0f0e`)
-10. Contact
-11. Footer (credits for the Wikimedia pictures in `public/places/credits.json`)
+1. Nav — floating pill, "SM" badge, active section highlight, Contact CTA
+2. Hero — name, role kicker, desc, two CTAs, portrait, grid bg animation
+3. Stats — animated counters (2+ years, 5 certs, 2 companies)
+4. Work — case study cards
+5. About — bio + status cards
+6. Experience — timeline entries
+7. Research — published paper card
+8. Education — scroll-driven timeline
+9. Certifications — badge cards
+10. Skills — 5 grouped rows with hover-accent tags
+11. Blog — placeholder
+12. Contact — CTA with grid bg
+13. Footer
+
+## Responsiveness
+- `repeat(auto-fit, minmax(..., 1fr))` grids throughout
+- `clamp()` for fluid font sizes
+- Nav links scroll horizontally on mobile
+- Mobile section padding: `64px 20px`
 
 ## Implementation notes
-- `next/font/google` for Space Grotesk only
+- `next/font/google` for Space Grotesk and JetBrains Mono
 - `scroll-margin-top: 88px` on all sections
-- Intersection Observer: active nav, stat counter, stage swap, entrances
+- Intersection Observer: active nav, stat counter, education timeline fill
+- Skill tags: hover → `background:#C3E75B; color:#0d0f0e`
 - Selection: `background:#C3E75B; color:#0d0f0e`

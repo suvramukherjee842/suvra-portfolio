@@ -15,6 +15,9 @@ export function renderOgImage() {
           justifyContent: "center",
           padding: "80px",
           background: "#0d0f0e",
+          backgroundImage:
+            "linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px)",
+          backgroundSize: "46px 46px",
         }}
       >
         <div
